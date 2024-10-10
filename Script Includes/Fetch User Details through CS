@@ -1,1 +1,56 @@
+OnChange on the Caller field Client Script : - 
 
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (newValue === '') {
+
+      g_form.setValue('u_caller_manager','');
+	  g_form.setValue('u_caller_department','');
+	  g_form.setValue('short_description','');
+
+   }
+
+   var userRecord = new GlideAjax('GetUserValues_SI');
+   userRecord.addParam('sysparm_name','getUserValue');
+   userRecord.addParam('sysparm_caller',newValue);
+   userRecord.getXML(getResponse);
+
+   function getResponse(response){
+
+    var callerResult = response.responseXML.documentElement.getAttribute('answer');
+
+	var resultObj = JSON.parse(callerResult);
+	
+    g_form.setValue('u_caller_manager',resultObj.mgr);
+	g_form.setValue('u_caller_department',resultObj.dept);
+	g_form.setValue('short_description',resultObj.email);
+
+   }
+}
+
+
+
+Client Callable Script Includes : -
+
+var GetUserValues_SI = Class.create();
+GetUserValues_SI.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+getUserValue:function(){
+
+var usrObj={};
+
+var caller = this.getParameter('sysparm_caller');
+
+var user = new GlideRecord('sys_user');
+user.get(caller);
+
+usrObj.mgr = user.getValue('manager');
+usrObj.dept = user.getValue('department');
+usrObj.email = user.getValue('email');
+
+return JSON.stringify(usrObj);
+
+},
+
+
+    type: 'GetUserValues_SI'
+});
