@@ -1,0 +1,9 @@
+Subject - A test record ${u_number} has been created on your behalf
+
+Body - 
+
+Number: ${URI_REF}
+
+User Name: ${u_user.URI_REF}
+
+Short Description: ${u_short_description}
