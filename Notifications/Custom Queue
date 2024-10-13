@@ -1,0 +1,8 @@
+BR : - 
+
+gs.eventQueue('test.priority.update',current,gs.getUserDisplayName(),current.priority,'priority_notification');
+
+Event : - 
+
+Name - test.priority.update
+Queue - priority_notification 
