@@ -1,8 +1,17 @@
 BR : - 
 
-gs.eventQueue('test.priority.update',current,gs.getUserDisplayName(),current.priority,'priority_notification');
+gs.eventQueue('test.priority.update',current,current.u_user.email.getDisplayValue(),current.u_user.manager.email.getDisplayValue(),'priority_notification');
 
-Event : - 
+Event is fired: - 
 
 Name - test.priority.update
 Queue - priority_notification 
+
+Notification : - 
+
+Message HTML - ${mail_script:trigger_priority_notification}
+
+check recipient 1 , recipient 2 , send to event creator
+
+
+
