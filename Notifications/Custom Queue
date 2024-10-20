@@ -13,5 +13,16 @@ Message HTML - ${mail_script:trigger_priority_notification}
 
 check recipient 1 , recipient 2 , send to event creator
 
+Notification email scripts : - 
+
+template.print("Number: " + current.u_number + '<br />');
+		template.print("User: " + current.getDisplayValue('u_user') + '<br />');
+		template.print("Additional Users: " + current.getDisplayValue('u_additional_users') + '<br />');
+		
+		email.addAddress("cc",event.parm1,current.u_user.getDisplayValue());
+		email.addAddress("bcc",event.parm2,current.u_user.manager.getDisplayValue());
+		
+		email.setSubject("A new test record number " + current.u_number + " has been created/updated");
+
 
 
