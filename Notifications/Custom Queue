@@ -9,7 +9,7 @@ Queue - priority_notification
 
 Navigate to sys_trigger table and create a new record with Trigger type = interval
 
-fcScriptName=javascript\:GlideEventManager(<HERE>).process(); line
+fcScriptName=javascript\:GlideEventManager('text_index').process();
 
 Notification : - 
 Message HTML - ${mail_script:trigger_priority_notification}
