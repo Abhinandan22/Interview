@@ -11,6 +11,9 @@ Navigate to sys_trigger table and create a new record with Trigger type = interv
 
 fcScriptName=javascript\:GlideEventManager('text_index').process();
 
+Event - test.priority.update
+Queue - priority_notification 
+
 Notification : - 
 Message HTML - ${mail_script:trigger_priority_notification}
 
