@@ -1,0 +1,26 @@
+var userDisplay = [];
+
+var grInc = new GlideRecord('incident');
+
+grInc.get('d7195138c0a8016700fd68449cfcd484');
+
+var wl = grInc.watch_list.split(',');
+
+for(var i = 0 ; i < wl.length ; i++){
+
+var userVal = new GlideRecord('sys_user');
+
+userVal.get(wl[i]);
+
+userDisplay.push(userVal.name);
+
+
+}
+
+gs.print(userDisplay);
+
+userDisplay.forEach(function(val){
+  
+  gs.print(val);
+
+});
