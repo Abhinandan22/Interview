@@ -1,0 +1,5 @@
+onChange Client Script in email field of a user profile to only allow email of xyz.com
+
+var emailPattern = /a-zA-Z0-9._%+-/+@xyz\.com$/;
+
+if(emailPattern.test(newValue))
