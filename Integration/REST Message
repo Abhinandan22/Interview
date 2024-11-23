@@ -1,6 +1,6 @@
 1)Create a REST message and endpoint provide the below values - https://dev242561.service-now.com/api/now/table/${tableName}/${id}
 
-Use the tableName and id in the Variable Substitutions. As dynamically pass any of the values and the same will be queried instead of hard coding.
+Click on Auto-generate variables to get the variable populated automatically. Pass the values to test it now.
 
 2) In the HTTP query parameters pass the below values : - 
 
