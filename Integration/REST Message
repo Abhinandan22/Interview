@@ -1,0 +1,18 @@
+1)Create a REST message and endpoint provide the below values - https://dev242561.service-now.com/api/now/table/${tableName}/${id}
+
+Use the tableName and id in the Variable Substitutions. As dynamically pass any of the values and the same will be queried instead of hard coding.
+
+2) In the HTTP query parameters pass the below values : - 
+
+sysparm_display_value - true
+sysparm_fields - number,caller_id,description,short_description
+
+3) In the HTTP Headers
+
+Content-Type - application/json
+
+4)Make sure proper authentication has been done.
+
+5) Click on TEST to validate the response received. The Test Run tabs provide the values.
+
+6) Click on Preview Script usage to get the script along with the Variable substitution to be used in business Rules
