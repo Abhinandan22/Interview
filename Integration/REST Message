@@ -2,6 +2,8 @@
 
 Click on Auto-generate variables to get the variable populated automatically. Pass the values to test it now.
 
+
+
 2) In the HTTP query parameters pass the below values : - 
 
 sysparm_display_value - true
@@ -14,5 +16,7 @@ Content-Type - application/json
 4)Make sure proper authentication has been done.
 
 5) Click on TEST to validate the response received. The Test Run tabs provide the values.
+
+Result - {"result":{"number":"INC0012484","short_description":"Create test incident","caller_id":{"display_value":"Fred Luddy","link":"https://dev242561.service-now.com/api/now/table/sys_user/5137153cc611227c000bbd1bd8cd2005"},"description":"Please create test incident and check if it gets completed"}}
 
 6) Click on Preview Script usage to get the script along with the Variable substitution to be used in business Rules
