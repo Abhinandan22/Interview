@@ -20,3 +20,25 @@ Content-Type - application/json
 Result - {"result":{"number":"INC0012484","short_description":"Create test incident","caller_id":{"display_value":"Fred Luddy","link":"https://dev242561.service-now.com/api/now/table/sys_user/5137153cc611227c000bbd1bd8cd2005"},"description":"Please create test incident and check if it gets completed"}}
 
 6) Click on Preview Script usage to get the script along with the Variable substitution to be used in business Rules
+
+
+In order to use this in a business rules , use the below script : - 
+
+try { 
+ var request = new sn_ws.RESTMessageV2('Incident Details', 'Populate Incident fields');
+
+ request.setStringParameterNoEscape('id', '7c0c96618382521094589796feaad3a6'); //sys_id is of the other incident
+ request.setStringParameterNoEscape('tableName', 'incident');
+
+var response = request.execute();
+ 
+var responseBody = response.getBody();
+
+gs.log(responseBody,'RESPONSE');
+ 
+
+}
+catch(ex) {
+ var message = ex.message;
+}
+})(current, previous);
